@@ -1,6 +1,6 @@
 # TCGA and METABRIC hypoxia, survival, and CNA analysis
 
-This repository contains the code and derived analysis files used to reproduce the main analyses for the manuscript:
+This repository contains the code and derived analysis files used to reproduce the main analyses:
 
 **Tumor hypoxia is associated with global copy-number alteration burden and subtype-dependent overall survival in breast cancer: evidence from TCGA and METABRIC**
 
