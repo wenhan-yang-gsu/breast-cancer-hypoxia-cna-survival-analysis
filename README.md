@@ -48,7 +48,7 @@ This repository includes the following reproducibility files:
 - `00_final_summary_PHsafe.txt`: plain-text summary of the main final model results.
 - `TCGA_processed_survival_dataset.csv`: processed TCGA survival analysis dataset.
 - `METABRIC_processed_survival_dataset.csv`: processed METABRIC survival analysis dataset.
-- - `TCGA_LumB_processed_survival_dataset.csv`: processed TCGA Luminal B survival analysis dataset used for Luminal B subtype-specific and mutation-enrichment analyses.
+- `TCGA_LumB_processed_survival_dataset.csv`: processed TCGA Luminal B survival analysis dataset used for Luminal B subtype-specific and mutation-enrichment analyses.
 - `TCGA_LumB_CNA_processed_dataset.csv`: processed TCGA Luminal B CNA analysis dataset.
 - `METABRIC_CNA_processed_dataset.csv`: processed METABRIC CNA analysis dataset.
 - `dataset_manifest.csv`: dataset and processed-file manifest.
