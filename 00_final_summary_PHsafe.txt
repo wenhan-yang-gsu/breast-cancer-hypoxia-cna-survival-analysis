@@ -7,11 +7,11 @@ TCGA LumB base hypoxia: Cox PH model -> HR=0.303 (0.138-0.666), p=2.94e-03, n=19
 TCGA LumB clinical-main hypoxia: Cox PH model -> HR=0.329 (0.140-0.771), p=1.06e-02, n=190, events=29, Cox PH global p=9.65e-01, exposure PH p=8.93e-01
 TCGA LumB clinical+CNA hypoxia: Cox PH model -> HR=0.360 (0.152-0.855), p=2.06e-02, n=190, events=29, Cox PH global p=9.75e-01, exposure PH p=7.48e-01
 TCGA LumB clinical+CNA burden: Cox PH model -> HR=1.398 (0.780-2.506), p=2.6e-01, n=190, events=29, Cox PH global p=9.75e-01, exposure PH p=9.99e-01
-METABRIC hypoxia-only: Weibull AFT fallback -> TR=1.304 (1.190-1.428), p=1.08e-08, n=1979, events=1143, Cox PH global p=9.02e-08, exposure PH p=9.02e-08
-METABRIC clinical-adjusted hypoxia: Weibull AFT fallback -> TR=1.213 (1.084-1.357), p=7.44e-04, n=1406, events=786, Cox PH global p=9.07e-27, exposure PH p=2.46e-06
-METABRIC subtype+clinical+CNA hypoxia: Weibull AFT fallback -> TR=1.198 (1.070-1.342), p=1.79e-03, n=1406, events=786, Cox PH global p=4.34e-26, exposure PH p=2.65e-06
-METABRIC subtype+clinical+CNA burden: Weibull AFT fallback -> TR=0.820 (0.623-1.079), p=1.57e-01, n=1406, events=786, Cox PH global p=4.34e-26, exposure PH p=5.05e-05
+METABRIC hypoxia-only: Weibull AFT model -> TR=1.304 (1.190-1.428), p=1.08e-08, n=1979, events=1143, Cox PH global p=9.02e-08, exposure PH p=9.02e-08
+METABRIC clinical-adjusted hypoxia: Weibull AFT model -> TR=1.213 (1.084-1.357), p=7.44e-04, n=1406, events=786, Cox PH global p=9.07e-27, exposure PH p=2.46e-06
+METABRIC subtype+clinical+CNA hypoxia: Weibull AFT model -> TR=1.198 (1.070-1.342), p=1.79e-03, n=1406, events=786, Cox PH global p=4.34e-26, exposure PH p=2.65e-06
+METABRIC subtype+clinical+CNA burden: Weibull AFT model -> TR=0.820 (0.623-1.079), p=1.57e-01, n=1406, events=786, Cox PH global p=4.34e-26, exposure PH p=5.05e-05
 
 Open 00_final_results_PHsafe.xlsx first.
 Sheet preferred_results contains the main numbers to cite.
-If a METABRIC Cox model violates PH, the preferred estimate is switched to Weibull AFT time ratio automatically.
+For METABRIC models with proportional hazards violations, Weibull AFT time ratios are used as the preferred interpretable estimates.
