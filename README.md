@@ -37,3 +37,26 @@ project_directory/
 ├── brca_metabric/
 ├── reproducible_code.R
 └── README.md
+
+## 3. Repository files
+
+This repository includes the following reproducibility files:
+
+- `reproducible_code.R`: R script used to prepare the analysis datasets, run survival and CNA analyses, and generate the final result files.
+- `00_final_results_PHsafe.xlsx`: final model result workbook. The `preferred_results` sheet contains the main estimates used for manuscript reporting.
+- `00_final_summary_PHsafe.txt`: plain-text summary of the main final model results.
+- `TCGA_processed_survival_dataset.csv`: processed TCGA survival analysis dataset.
+- `METABRIC_processed_survival_dataset.csv`: processed METABRIC survival analysis dataset.
+- `TCGA_LumB_CNA_processed_dataset.csv`: processed TCGA Luminal B CNA analysis dataset.
+- `METABRIC_CNA_processed_dataset.csv`: processed METABRIC CNA analysis dataset.
+- `dataset_manifest.csv`: dataset and processed-file manifest.
+- `sessionInfo.txt`: R version and package information.
+
+The processed CSV files contain the derived per-sample variables used in the manuscript analyses, including survival variables, hypoxia scores or hypoxia groups, clinical covariates, and CNA burden summaries where applicable.
+
+## 4. How to rerun the analysis
+
+After downloading the two raw cBioPortal study folders and placing them in the expected directory structure, run the following command in R or RStudio:
+
+```r
+source("reproducible_code.R")
