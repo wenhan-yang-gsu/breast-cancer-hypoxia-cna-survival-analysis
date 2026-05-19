@@ -952,7 +952,14 @@ cat("\n=============================\nLoading METABRIC\n========================
 
 met_patient_path <- pick_first_file(metabric_dir, c("data_clinical_patient.txt"))
 met_sample_path  <- pick_first_file(metabric_dir, c("data_clinical_sample.txt"))
-met_expr_path    <- pick_first_file(metabric_dir, c("data_mrna_illumina_microarray.txt", "data_mRNA.txt"))
+met_expr_path <- pick_first_file(
+  metabric_dir,
+  c(
+    "data_mrna_illumina_microarray_zscores_ref_diploid_samples.txt",
+    "data_mrna_illumina_microarray.txt",
+    "data_mRNA.txt"
+  )
+)
 met_cna_path     <- pick_first_file(metabric_dir, c("data_cna.txt"))
 met_mut_path     <- pick_first_file(metabric_dir, c("data_mutations.txt"))
 
@@ -1245,8 +1252,8 @@ manifest <- data.frame(
   dataset_folder = c(tcga_dir, metabric_dir),
   survival_endpoint = c(tcga_surv_cols$endpoint, met_surv_cols$endpoint),
   processed_file = c(
-    "processed_data/TCGA_processed_survival_dataset.csv",
-    "processed_data/METABRIC_processed_survival_dataset.csv"
+    "TCGA_processed_survival_dataset.csv",
+    "METABRIC_processed_survival_dataset.csv"
   )
 )
 readr::write_csv(manifest, file.path(out_dir, "dataset_manifest.csv"))
@@ -1495,7 +1502,7 @@ build_preferred_row <- function(label, cox_model, cox_term_pattern, ph_term_exac
       cox_model = cox_model,
       cox_ph_global_p = ph_global_p,
       cox_ph_exposure_p = ph_exposure_p,
-      note = "PH diagnostics acceptable; report Cox HR."
+      note = "Cox HR is reported with model-specific PH diagnostics."
     ))
   }
   
@@ -1622,8 +1629,8 @@ make_summary_line <- function(label_pattern) {
 }
 
 summary_lines <- c(
-  "Final model output summary",
-  paste0("Output folder: ", out_dir),
+  "PH-safe final output summary",
+  "Output files are provided in this repository.",
   "",
   make_summary_line("TCGA pooled subtype-adjusted hypoxia"),
   make_summary_line("TCGA pooled clinical-adjusted hypoxia"),
@@ -1638,7 +1645,7 @@ summary_lines <- c(
   "",
   "Open 00_final_results_PHsafe.xlsx first.",
   "Sheet preferred_results contains the main numbers to cite.",
-  "For METABRIC models with proportional hazards violations, Weibull AFT time ratios are used as the preferred estimates."
+  "For METABRIC models with proportional hazards violations, Weibull AFT time ratios are used as the preferred interpretable estimates."
 )
 writeLines(summary_lines, file.path(out_dir, "00_final_summary_PHsafe.txt"))
 
