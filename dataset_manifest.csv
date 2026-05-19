@@ -1,3 +1,3 @@
 cohort,dataset_folder,survival_endpoint,processed_file
-TCGA,brca_tcga_pan_can_atlas_2018,OS,processed_data/TCGA_processed_survival_dataset.csv
-METABRIC,brca_metabric,OS,processed_data/METABRIC_processed_survival_dataset.csv
+TCGA,brca_tcga_pan_can_atlas_2018,OS,TCGA_processed_survival_dataset.csv
+METABRIC,brca_metabric,OS,METABRIC_processed_survival_dataset.csv
