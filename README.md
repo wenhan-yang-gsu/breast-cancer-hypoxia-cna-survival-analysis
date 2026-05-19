@@ -37,6 +37,7 @@ project_directory/
 ├── brca_metabric/
 ├── reproducible_code.R
 └── README.md
+```
 
 ## 3. Repository files
 
